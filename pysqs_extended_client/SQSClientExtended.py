@@ -220,9 +220,9 @@ class SQSClientExtended(object):
 		if message_attributes_number > SQSExtendedClientConstants.MAX_ALLOWED_ATTRIBUTES.value:
 			raise ValueError("Number of message attributes [{}}] exceeds the maximum allowed for large-payload messages [{}].".format(message_attributes_number, SQSExtendedClientConstants.MAX_ALLOWED_ATTRIBUTES.value))
 
-		large_payload_attribute_value = message_attributes.get(SQSExtendedClientConstants.RESERVED_ATTRIBUTE_NAME.value)
-		if large_payload_attribute_value:
-			raise ValueError("Message attribute name {} is reserved for use by SQS extended client.".format(SQSExtendedClientConstants.RESERVED_ATTRIBUTE_NAME.value))
+		#large_payload_attribute_value = message_attributes.get(SQSExtendedClientConstants.RESERVED_ATTRIBUTE_NAME.value)
+		#if large_payload_attribute_value:
+		#	raise ValueError("Message attribute name {} is reserved for use by SQS extended client.".format(SQSExtendedClientConstants.RESERVED_ATTRIBUTE_NAME.value))
 
 		if self.always_through_s3 or self.__is_large(str(message), message_attributes):
 			if not self.s3_bucket_name.strip():
