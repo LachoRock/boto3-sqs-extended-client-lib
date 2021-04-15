@@ -1,5 +1,5 @@
 boto3==1.9.86
-botocore==1.13.0
+botocore==1.12.86
 codecov==2.0.15
 moto==1.3.13
 pip-chill==0.1.8
